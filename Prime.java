@@ -1,37 +1,37 @@
-/*100ˆÈ‰º‚Ì‘f”‚ğ”­Œ©‚·‚é*/
+/*100ä»¥ä¸‹ã®ç´ æ•°ã‚’ç™ºè¦‹ã™ã‚‹*//*test*/
 class Prime{
 	final static int maxRoot=10;
 	final static int max=maxRoot*maxRoot;
-	final static int[] prim={2,3,5,7,11};//maxRootˆÈã‚ÅÅ¬‚Ì‘f”‚ğÅ‘å‚Æ‚·‚é‘f”‚Ì—ñ
-	final static int pSize=5;//prim‚Ì—v‘f”
+	final static int[] prim={2,3,5,7,11};//maxRootä»¥ä¸Šã§æœ€å°ã®ç´ æ•°ã‚’æœ€å¤§ã¨ã™ã‚‹ç´ æ•°ã®åˆ—
+	final static int pSize=5;//primã®è¦ç´ æ•°
 	final static int pMax=11;
 	
 	public static void main(String[] args){
-		//n‘f”‚È‚çnumPrim[n-1]‚Étrue‚ğŠi”[‚µ‚Ä‚¢‚­
+		//nç´ æ•°ãªã‚‰numPrim[n-1]ã«trueã‚’æ ¼ç´ã—ã¦ã„ã
 		boolean[] numPrim=new boolean[max];
 		
-		//prim[]‚Ì—v‘f‚ÉŒÂ•Ê‚Åtrue‚ğ“ü‚ê‚é
+		//prim[]ã®è¦ç´ ã«å€‹åˆ¥ã§trueã‚’å…¥ã‚Œã‚‹
 		for(int i=0;i<pSize;i++){
 			
 			numPrim[prim[i]-1]=true;
 		}
 		
-		//pMaxˆÈã‚ÅcheckPrim‚ªtrue‚È‚çtrue
+		//pMaxä»¥ä¸Šã§checkPrimãŒtrueãªã‚‰true
 		for(int i=pMax+1;i<max;i++){
 			numPrim[i]=checkPrim(i+1);
 		}
 		
-		//•\¦
-		System.out.print(max+"ˆÈ‰º‚Ì‘f”‚Í");
+		//è¡¨ç¤º
+		System.out.print(max+"ä»¥ä¸‹ã®ç´ æ•°ã¯");
 		for(int i=0;i<max;i++){
 			if(numPrim[i]){
 				System.out.print(","+(i+1));
 			}
 		}
-		System.out.println("‚Å‚·B");
+		System.out.println("ã§ã™ã€‚");
 	}
 	
-	//Prim‚ÅŠ„‚èØ‚ê‚½‚çfalseB‚¶‚á‚È‚©‚Á‚½‚çTrue
+	//Primã§å‰²ã‚Šåˆ‡ã‚ŒãŸã‚‰falseã€‚ã˜ã‚ƒãªã‹ã£ãŸã‚‰True
 	static boolean checkPrim(int n){
 		for(int i=0;i<pSize;i++){
 			if(n%prim[i]==0)return false;
